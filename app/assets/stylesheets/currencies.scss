@@ -1,0 +1,66 @@
+// Place all the styles related to the Currencies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table  a:visited{
+    color: #0275d8;
+}
+
+.table  a:hover{
+    color: #888;
+    background-color: white;
+}
+
+#crypto_navbar{
+    padding: 0px
+}
+.crypto_currency_container{
+    min-height : 30px;
+    background : #eee;
+}
+.crypto_heading_container{
+   margin-top : 45px;
+}
+.crypto_title{
+    font-size : 30px;
+}
+.title_divider{
+    margin-bottom : 15px;
+}
+
+.currency_card_container{
+    margin-top : 50px;
+}
+#currency_card{
+    border: 2px solid white;
+    box-shadow : 2px 2px 2px 2px #e5e5e5;
+}
+.currency_name{
+    font-size: 30px;
+}
+.card-body {
+    margin-bottom: 40px;
+    ul{
+        margin-top: 1rem;
+        list-style-type : none;
+        li{
+        padding : 5px 0 5px 0;
+        }
+    }
+}
+.currency_values ul li{
+    font-size: 18px;
+}
+.card-body table{
+    margin: auto;
+    //width : 70%;
+}
+.card-footer {
+    a:hover{
+        background : initial;
+        color: #888;
+    }
+    a:visited{
+        color:#0275d8 ;
+    }
+}

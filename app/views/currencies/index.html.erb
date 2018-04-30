@@ -1,0 +1,46 @@
+
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-bordered table-responsive">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Price(USD)</th>
+      <th>Price (BTC)</th>
+      <th>Volume (24h)</th>
+      <th>Market Cap</th>
+      <th>Circulating Supply</th>
+      <th>% 1h </th>
+      <th>% 24h </th>
+      <th>% 7d </th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @currencies.each do |currency| %>
+      <tr>
+        <td><%= currency["rank"] %></td>
+        <td><%=link_to  currency["name"], currency_path(:id => currency["id"]) %></td>
+        <td><%= currency["symbol"] %></td>
+        <td><%= currency["price_usd"] %></td>
+        <td><%= currency["price_btc"] %></td>
+        <td><%= currency["24h_volume_usd"] %></td>
+        <td><%= currency["market_cap_usd"] %></td>
+        <td><%= currency["available_supply"] %></td>
+        <td><%= currency["percent_change_1h"] %></td>
+        <td><%= currency["percent_change_24h"] %></td>
+        <td><%= currency["percent_change_7d"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  </div>
+</div>
+
+  
+
+
+

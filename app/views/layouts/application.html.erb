@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CryptoCurrencyApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" %>
+   
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header class="navbar navbar-fixed-top" id="crypto_navbar">
+      <div class="container-fluid crypto_currency_container">
+        <div class = "row">
+          <div class = "col-sm-4">
+            <ul class="list-inline">
+              <li class="list-inline-item">Cryptocurrencies : 
+                <strong><%= @currencies.count %></strong>
+              </li>
+              <li class="list-inline-item">/ Markets : 
+                <strong><%= @global_data["active_markets"] %></strong>
+              </li>
+            </ul>
+          </div>
+          <div class = "col-sm-8 text-right">
+            <ul class="list-inline">
+              <li class="list-inline-item">Market Cap : <strong><%= @global_data["total_market_cap_usd"] %></strong></li>
+              <li class="list-inline-item">/ 24h Volume : <strong><%= @global_data["total_24h_volume_usd"] %></strong></li>
+              <li class="list-inline-item">/ BTC Dominance : <strong><%= @global_data["bitcoin_percentage_of_market_cap"] %></strong></li>
+            </ul>
+          </div>
+        </div>
+  </div>
+</header>
+<div class="row crypto_heading_container">
+  <div class="col-sm-12 text-center">
+    <div class="crypto_title">
+      <strong>Cryptocurrency Market Capitalizations</strong>
+    </div>
+  </div>
+</div>
+<hr class="title_divider">
+    <div class="container-fluid currency_main_container">
+  <%= yield %>
+</div>
+  </body>
+</html>

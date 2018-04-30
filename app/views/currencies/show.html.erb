@@ -1,0 +1,60 @@
+
+<div class="container-fluid currency_card_container">
+  <div class="card" id="currency_card">
+    <% @currency.each do |currency| %>
+      <div class="card-header text-center currency_name">
+       <strong><%= currency["name"] %> (<%= currency["symbol"] %>)</strong> 
+       </div>
+      <div class="container-fluid card-body">
+        <div class="row">
+          <div class="col-sm-6 text-center">
+            <ul class="list">
+              <li class="list-item"><strong>Price(USD)</strong></li>
+              <li class="list-item"><strong>Price(BTC)</strong></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 text-center currency_values">
+             <ul class="list">
+              <li class="list-item"><strong>$<%= currency["price_usd"] %> ( <%= currency["percent_change_24h"] %> %)</strong> </li>
+              <li class="list-item"><strong><%= currency["price_btc"] %></strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <table class="table table-bordered table-responsive">
+               <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Market Cap</th>
+                  <th>Volume (24H )</th>
+                  <th>Circulating Supply</th>
+                  <th>Maximum Supply </th>
+                  <th>Percentage change (1H) </th>
+                  <th>Percentage change  (7D) </th>
+                  <th>Last Updated </th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= currency["rank"] %></td>
+                  <td><%= currency["market_cap_usd"] %></td>
+                  <td> <%= currency["24h_volume_usd"] %></td>
+                  <td><%= currency["available_supply"] %></td>
+                  <td><%= currency["total_supply"] %></td>
+                  <td>  <%= currency["percent_change_1h"] %></td>
+                  <td><%= currency["percent_change_7d"] %></td>
+                  <td> <%= currency["last_updated"] %></td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div> 
+      <div class="card-footer"><%= link_to 'Back', currencies_path %></div>
+    <% end %>  
+  </div>
+</div>
+
